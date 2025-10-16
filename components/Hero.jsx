@@ -7,6 +7,22 @@ const Hero = () => {
     const heroRef = useRef(null);
     const logoRef = useRef(null);
     const [scale, setScale] = useState(5);
+    if (typeof window !== "undefined") {
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector("header");
+            const logoBanner = document.querySelector(".logo_banner_inner");
+            if (!header || !logoBanner) return;
+            const headerRect = header.getBoundingClientRect();
+            const logoBannerRect = logoBanner.getBoundingClientRect();
+            const headerCenter = headerRect.top + headerRect.height / 2;
+            const logoBannerTop = logoBannerRect.top;
+            if (logoBannerTop <= headerCenter) {
+                header.classList.add("is-touch");
+            } else {
+                header.classList.remove("is-touch");
+            }
+        });
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,7 +53,7 @@ const Hero = () => {
                         src="/velour-logo-v2-white.svg"
                         style={{
                             transform: `scale(${scale})`,
-                            transition: "transform 0.1s linear",
+                            transition: "transform 0.2s linear",
                         }}
                     />
                 </div>

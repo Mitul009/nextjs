@@ -36,14 +36,14 @@ const Header = () => {
     return (
         <>
             <Announcement />
-            <header className='header py-[18px] sticky top-0 w-full z-10'>
+            <header className='header py-[18px] sticky top-0 w-full z-10 [&.is-touch]:bg-white [&.is-touch_a]:text-black [&.is-touch_svg]:stroke-black [&.is-touch_.header-center]:opacity-[1] transition duration-300 ease-in-out'>
                 <div className="custom_container">
                     <div className="header_wrapper flex items-center justify-between gap-2.5 relative">
                         <div className="header_left">
                             <div className="header_left_inn flex items-center">
                                 <div className="header_hamburger">
                                     <a href="#" className='flex items-center justify-center mr-[16px]'>
-                                        <Menu size={20} color='#fff' />
+                                        <Menu size={20} color='#fff'/>
                                     </a>
                                 </div>
                                 <div className="header_nav">
@@ -59,7 +59,7 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="header_center absolute left-1/2 transform -translate-x-1/2 opacity-[0]">
+                        <div className="header-center absolute left-1/2 transform -translate-x-1/2 opacity-[0] ">
                             <a href="#" className='header_logo w-[150px] mx-[auto] block'>
                                 <img src="velour-logo-v2.svg" />
                             </a>

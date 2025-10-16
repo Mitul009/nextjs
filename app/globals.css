@@ -18,6 +18,9 @@ body {
 .hero_bottom span{
   animation: icon-bounce 1s ease-in-out infinite;
 }
+.footer_block ul li{
+  margin: 8px 0;
+}
 @keyframes icon-bounce {
   0%, 100% {
     transform: translateY(0);
